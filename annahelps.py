@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
 
-from log_pass import acces_data
+from Psychologist_Flask.log_pass import acces_data
 
 
 app = Flask(__name__)
