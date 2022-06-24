@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/base_style.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+    <body>
+      <header>
+        <img class="logo" src="/static/logo.png" alt="logo">
+        <nav>
+          <ul class="nav_links">
+            {% block home_1 %}{% endblock %}
+            <li><a href="{{ url_for('articles_page') }}">Мої дописи</a></li>
+            <li><a href="{{ url_for('about_page') }}">Питання та Відповіді</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="{{ url_for('buy_page') }}"><button>Хочу консультацію</a>
+      </header>
+      {% block body %}{% endblock %}
+    </body>
+</html>
