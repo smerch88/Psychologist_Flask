@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/static/base_style.css">
+    <link rel="stylesheet" href="./static/base_style.css">
     <title>{% block title %}{% endblock %}</title>
 </head>
     <body>
+      <div class="width-wrapper">
       <header>
         <img class="logo" src="/static/logo.png" alt="logo">
         <nav>
@@ -16,8 +17,9 @@
             <li><a href="{{ url_for('about_page') }}">Питання та Відповіді</a></li>
           </ul>
         </nav>
-        <a class="cta" href="{{ url_for('buy_page') }}"><button>Хочу консультацію</a>
+        <a class="cta" href="{{ url_for('buy_page') }}"><button>Хочу консультацію!</a>
       </header>
       {% block body %}{% endblock %}
+    </div>
     </body>
 </html>

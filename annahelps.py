@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
 
-from Psychologist_Flask.log_pass import acces_data
+from log_pass import acces_data
 
 
 app = Flask(__name__)
@@ -38,7 +38,7 @@ def confirmation():
      return render_template('confirmed.html')
 
 
-@app.route('/buy', methods=['GET', 'POST'])
+@app.route('/help_me', methods=['GET', 'POST'])
 def buy_page():
      if request.method == 'POST':
           # getting the html inputs and referencing them
@@ -51,8 +51,10 @@ def buy_page():
           msg.body = the_whole_message
           mail.send(msg)
           return redirect(url_for('confirmation'))
-     return render_template('buy.html')
+     return render_template('help_me.html')
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0') #5000 
+
+
